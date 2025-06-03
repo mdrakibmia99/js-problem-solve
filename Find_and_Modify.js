@@ -7,13 +7,12 @@ const peopleList = [
 ];
 
 function updateAgeByName(arr, targetName, newAge) {
-  const person = arr.find(p => p.name === targetName);
-  if (person) {
-    person.age = newAge;
-  }else{
-    console.log(`Person with name ${targetName} not found.`);
+  const person= arr.find(p=> p.name=== targetName);
+  if(!person) {
+    return `Person with name ${targetName} not found.`;
   }
-  return arr;
+    person.age = newAge;
+    return arr;
 }
 
 console.log(updateAgeByName(peopleList, "Hasna", 23));
